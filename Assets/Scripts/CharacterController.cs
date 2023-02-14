@@ -25,6 +25,7 @@ public class CharacterController : MonoBehaviour {
         rb = GetComponent<Rigidbody2D>();
         isJumping = false;
         speed = walkSpeed;
+        transform.SetParent(null);
         
     }
 
