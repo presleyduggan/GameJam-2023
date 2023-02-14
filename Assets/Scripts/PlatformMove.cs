@@ -5,10 +5,6 @@ using UnityEngine;
 public class PlatformMove : MonoBehaviour
 {
     public float speed;
-    [SerializeField]
-    private bool isMovingY;
-    [SerializeField]
-    private bool isMovingX;
 
     [SerializeField]
     private float xEnd;
