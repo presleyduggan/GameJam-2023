@@ -51,7 +51,7 @@ public class Cloud : Enemy {
         //yield return new WaitForSeconds(3f);
 
         float animationLength = animator.GetCurrentAnimatorStateInfo(0).length;
-        yield return new WaitForSecondsRealtime(animationLength);
+        yield return new WaitForSecondsRealtime(animationLength - 0.50f);
 
         Transform laser = beam.GetChild(0);
         laser.gameObject.SetActive(true);
@@ -72,12 +72,15 @@ public class Cloud : Enemy {
         renderer.material.SetColor("_Color", Color.red);
         shooting = true;
         Transform beam = beams[currentTrigger];
+        Animator animator = beam.gameObject.GetComponent<Animator>();
         Transform beam2 = beams[generateRandomBeam(currentTrigger)];
         beam.gameObject.SetActive(true);
         beam2.gameObject.SetActive(true);
         //StartCoroutine(wait());
         Debug.Log("waiting for 1...");
-        yield return new WaitForSeconds(3f);
+        //yield return new WaitForSeconds(3f);
+        float animationLength = animator.GetCurrentAnimatorStateInfo(0).length;
+        yield return new WaitForSecondsRealtime(animationLength - 0.50f);
 
         Transform laser = beam.GetChild(0);
         Transform laser2 = beam2.GetChild(0);
