@@ -42,7 +42,7 @@ public class CharacterController : MonoBehaviour {
 
         if(moveInput > 0){
             transform.eulerAngles = new Vector3(0,0,0);
-        } else{
+        } else if(moveInput < 0){
             transform.eulerAngles = new Vector3(0,180,0);
         }
 
