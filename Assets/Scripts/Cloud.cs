@@ -45,9 +45,13 @@ public class Cloud : Enemy {
         shooting = true;
         Transform beam = beams[currentTrigger];
         beam.gameObject.SetActive(true);
+        Animator animator = beam.gameObject.GetComponent<Animator>();
         //StartCoroutine(wait());
         Debug.Log("waiting for 1...");
-        yield return new WaitForSeconds(3f);
+        //yield return new WaitForSeconds(3f);
+
+        float animationLength = animator.GetCurrentAnimatorStateInfo(0).length;
+        yield return new WaitForSecondsRealtime(animationLength);
 
         Transform laser = beam.GetChild(0);
         laser.gameObject.SetActive(true);
