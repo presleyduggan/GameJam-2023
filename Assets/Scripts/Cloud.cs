@@ -13,8 +13,6 @@ public class Cloud : Enemy {
     [SerializeField]
     private float cloudTimer;
 
-    private bool shooting = false;
-
 
     private void Start() {
         for(int i = 0; i<3; i++){
@@ -42,7 +40,6 @@ public class Cloud : Enemy {
 
     public IEnumerator activateBeam(){
         cloudTimer = 1000f;
-        shooting = true;
         Transform beam = beams[currentTrigger];
         beam.gameObject.SetActive(true);
         Animator animator = beam.gameObject.GetComponent<Animator>();
@@ -61,7 +58,6 @@ public class Cloud : Enemy {
         Debug.Log("done?");
 
         cloudTimer = 3f;
-        shooting = false;
         beam.gameObject.SetActive(false);
         laser.gameObject.SetActive(false);
     }
@@ -70,7 +66,6 @@ public class Cloud : Enemy {
         cloudTimer = 1000f;
         var renderer = gameObject.GetComponent<Renderer>();
         renderer.material.SetColor("_Color", Color.red);
-        shooting = true;
         Transform beam = beams[currentTrigger];
         Animator animator = beam.gameObject.GetComponent<Animator>();
         Transform beam2 = beams[generateRandomBeam(currentTrigger)];
@@ -92,7 +87,6 @@ public class Cloud : Enemy {
         Debug.Log("done?");
 
         cloudTimer = 3f;
-        shooting = false;
         beam.gameObject.SetActive(false);
         beam2.gameObject.SetActive(false);
         laser.gameObject.SetActive(false);
