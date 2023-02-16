@@ -2,17 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class EnemyAI : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    //private Vector3 startingPosition;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+   // private void Start() {
+        //startingPosition = transform.position;
+    //}
+
+    //private Vector3 GetRoamingPosition() {
+        //UtilsClass.GetRandom3;
+    //}
 }
