@@ -52,6 +52,8 @@ public class GameManager : MonoBehaviour
         yield return new WaitForSeconds(3f);
         deathText.enabled = false;
         player.transform.position = playerStartingPosition;
+        var renderer = player.GetComponent<Renderer>();
+        renderer.material.SetColor("_Color", Color.white);
         player.SetActive(true);
         Debug.Log("player is respawned?");
 

@@ -54,7 +54,7 @@ public class Cloud : Enemy {
         beam.gameObject.SetActive(true);
         Animator animator = beam.gameObject.GetComponent<Animator>();
         //StartCoroutine(wait());
-        Debug.Log("waiting for 1...");
+       // Debug.Log("waiting for 1...");
         //yield return new WaitForSeconds(3f);
 
         float animationLength = animator.GetCurrentAnimatorStateInfo(0).length;
@@ -64,9 +64,9 @@ public class Cloud : Enemy {
         boom.Play();
         laser.gameObject.SetActive(true);
         //StartCoroutine(wait());
-        Debug.Log("waiting for 2...");
+       // Debug.Log("waiting for 2...");
         yield return new WaitForSeconds(3f);
-        Debug.Log("done?");
+       // Debug.Log("done?");
 
         cloudTimer = cloudTimerReset;
         beam.gameObject.SetActive(false);
@@ -83,7 +83,7 @@ public class Cloud : Enemy {
         beam.gameObject.SetActive(true);
         beam2.gameObject.SetActive(true);
         //StartCoroutine(wait());
-        Debug.Log("waiting for 1...");
+       // Debug.Log("waiting for 1...");
         //yield return new WaitForSeconds(3f);
         float animationLength = animator.GetCurrentAnimatorStateInfo(0).length;
         yield return new WaitForSecondsRealtime(animationLength - 0.50f);
@@ -94,9 +94,9 @@ public class Cloud : Enemy {
         laser2.gameObject.SetActive(true);
         boom.Play();
         //StartCoroutine(wait());
-        Debug.Log("waiting for 2...");
+       // Debug.Log("waiting for 2...");
         yield return new WaitForSeconds(3f);
-        Debug.Log("done?");
+       // Debug.Log("done?");
 
         cloudTimer = cloudTimerReset;
         beam.gameObject.SetActive(false);
@@ -106,7 +106,7 @@ public class Cloud : Enemy {
     }
 
     IEnumerator wait(){
-        Debug.Log("test1234");
+      //  Debug.Log("test1234");
         yield return new WaitForSeconds(3f);
     }
 

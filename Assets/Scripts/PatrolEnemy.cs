@@ -12,13 +12,27 @@ public class PatrolEnemy : MonoBehaviour
 
     bool once;
 
+    [SerializeField]
+    private bool facingRight = true;
+
     private void Update()
     {
 
-        if(transform.position.x > patrolPoints[currentPointIndex].position.x){
-            transform.eulerAngles = new Vector3(0,0,0);
-        } else{
-            transform.eulerAngles = new Vector3(0,180,0);
+        switch(facingRight){
+            case true:
+                if(transform.position.x > patrolPoints[currentPointIndex].position.x){
+                    transform.eulerAngles = new Vector3(0,0,0);
+                } else{
+                    transform.eulerAngles = new Vector3(0,180,0);
+                }
+                break;
+            default:
+                if(transform.position.x > patrolPoints[currentPointIndex].position.x){
+                    transform.eulerAngles = new Vector3(0,180,0);
+                } else{
+                    transform.eulerAngles = new Vector3(0,0,0);
+                }
+                break;
         }
 
 

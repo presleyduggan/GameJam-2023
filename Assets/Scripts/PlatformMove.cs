@@ -48,7 +48,7 @@ public class PlatformMove : MonoBehaviour
             yneg = false;
         }
 
-        Debug.Log("xvel = "+xvel+" and yvel="+yvel);
+     //   Debug.Log("xvel = "+xvel+" and yvel="+yvel);
 
     }
 
@@ -85,11 +85,11 @@ public class PlatformMove : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other) {
         if(!waitForPlayer){
-        Debug.Log("collision!");
+       // Debug.Log("collision!");
         other.transform.SetParent(transform);
         }
         else{
-            Debug.Log("collision on wait");
+           // Debug.Log("collision on wait");
             waitForPlayer = false;
             other.transform.SetParent(transform);
         }

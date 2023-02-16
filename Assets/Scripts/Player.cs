@@ -14,7 +14,7 @@ public class Player : Enemy
     public override void Die()
     {
         // game manager stuff
-        Debug.Log("death function?");
+       // Debug.Log("death function?");
         health = 0;
         gm.playerDied();
     }

@@ -10,14 +10,11 @@ public class Enemy : MonoBehaviour
 
     public GameObject deathEffect;
 
-    private void Start() {
-        
-    }
 
     public virtual void TakeDamage (int damage)
     {
 
-        Debug.Log("taking damage of "+damage);
+      //  Debug.Log("taking damage of "+damage);
 
         health -= damage;
 
@@ -25,7 +22,7 @@ public class Enemy : MonoBehaviour
 
         if (health <= 0)
         {
-            Debug.Log("killing player");
+         //   Debug.Log("killing player");
             Die();
             
         } else{

@@ -439,7 +439,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84fff2520c636d04a93c9521266469ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 200
+  health: 50
   deathEffect: {fileID: 0}
   beams: []
   cloudTimer: 3
@@ -456,7 +456,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: faf5e19d67d22de48b5eabf507920b28, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.114
+  m_Volume: 0.134
   m_Pitch: 1
   Loop: 0
   Mute: 0
