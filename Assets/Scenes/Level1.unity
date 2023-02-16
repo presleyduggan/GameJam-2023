@@ -39077,6 +39077,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 699009642115189130, guid: b44122c5cb099a2419b525b931b1d760, type: 3}
+      propertyPath: xEnd
+      value: -0.116
+      objectReference: {fileID: 0}
+    - target: {fileID: 699009642115189130, guid: b44122c5cb099a2419b525b931b1d760, type: 3}
+      propertyPath: yEnd
+      value: 8.476
+      objectReference: {fileID: 0}
     - target: {fileID: 1537255205036162888, guid: b44122c5cb099a2419b525b931b1d760, type: 3}
       propertyPath: m_Name
       value: Stone Elevator Left
@@ -39091,7 +39099,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1537255205036162932, guid: b44122c5cb099a2419b525b931b1d760, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.725
+      value: 2.717
       objectReference: {fileID: 0}
     - target: {fileID: 1537255205036162932, guid: b44122c5cb099a2419b525b931b1d760, type: 3}
       propertyPath: m_LocalPosition.z
