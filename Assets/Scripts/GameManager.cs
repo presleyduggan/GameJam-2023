@@ -1,18 +1,64 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+
+    public GameObject player;
+    private Vector3 playerStartingPosition;
+    public TMP_Text deathText;
+
+    public Player playerInfo;
+
+    public int levelNumber;
+
+    public AudioSource levelMusic;
+
     // Start is called before the first frame update
     void Start()
     {
+        playerStartingPosition = player.transform.position;
+        playerInfo = player.GetComponent<Player>();
+        /* switch(levelNumber){
+            case 1:
+
         
+        } */
+        levelMusic = GetComponent<AudioSource>();
+
+        levelMusic.Play();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
+
+    public void playerDied(){
+        StartCoroutine(respawnPlayer());
+    }
+
+
+    public IEnumerator respawnPlayer(){
+        player.SetActive(false);
+        Debug.Log("respawning player...");
+        deathText.enabled = true;
+        yield return new WaitForSeconds(3f);
+        deathText.enabled = false;
+        player.transform.position = playerStartingPosition;
+        player.SetActive(true);
+        Debug.Log("player is respawned?");
+
+    }
+
+    /* public void RespawnPlayer(){
+
+    } */
+
+
 }

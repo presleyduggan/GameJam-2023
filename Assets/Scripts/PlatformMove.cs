@@ -21,6 +21,8 @@ public class PlatformMove : MonoBehaviour
     private bool xneg = true;
     private bool yneg = true;
 
+    public bool waitForPlayer = false;
+
     //private bool swap = false;
 
     public Rigidbody2D rb;
@@ -76,13 +78,21 @@ public class PlatformMove : MonoBehaviour
         //rb.velocity = new Vector2(xvel * speed, yvel * speed);
         
         //transform.position = Vector2.MoveTowards(transform.position, )
-
+        if(!waitForPlayer){
         transform.position += new Vector3(xvel * speed * Time.deltaTime, yvel * speed * Time.deltaTime, 0);
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D other) {
+        if(!waitForPlayer){
         Debug.Log("collision!");
         other.transform.SetParent(transform);
+        }
+        else{
+            Debug.Log("collision on wait");
+            waitForPlayer = false;
+            other.transform.SetParent(transform);
+        }
         //other.gameObject.GetComponent<Rigidbody2D>().isKinematic = true;
        // Debug.Log(other.otherRigidbody.isKinematic);
     }

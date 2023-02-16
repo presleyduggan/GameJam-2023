@@ -6,9 +6,15 @@ public class Enemy : MonoBehaviour
 {
     public int health = 100;
 
+    private int startingHP;
+
     public GameObject deathEffect;
 
-    public void TakeDamage (int damage)
+    private void Start() {
+        
+    }
+
+    public virtual void TakeDamage (int damage)
     {
 
         Debug.Log("taking damage of "+damage);
@@ -19,18 +25,21 @@ public class Enemy : MonoBehaviour
 
         if (health <= 0)
         {
+            Debug.Log("killing player");
             Die();
-        }
+            
+        } else{
 
         // change color
         StartCoroutine(changeColor());
+        }
     }
 
-    void Die ()
+    public virtual void Die()
     {
         if(deathEffect != null)
             Instantiate(deathEffect, transform.position, Quaternion.identity);
-        Destroy(gameObject);
+        //Destroy(gameObject);
     }
 
     private IEnumerator changeColor(){

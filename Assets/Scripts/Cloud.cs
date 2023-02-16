@@ -13,6 +13,7 @@ public class Cloud : Enemy {
     [SerializeField]
     private float cloudTimer;
 
+    public AudioSource boom;
 
     private void Start() {
         for(int i = 0; i<3; i++){
@@ -51,6 +52,7 @@ public class Cloud : Enemy {
         yield return new WaitForSecondsRealtime(animationLength - 0.50f);
 
         Transform laser = beam.GetChild(0);
+        boom.Play();
         laser.gameObject.SetActive(true);
         //StartCoroutine(wait());
         Debug.Log("waiting for 2...");
@@ -81,6 +83,7 @@ public class Cloud : Enemy {
         Transform laser2 = beam2.GetChild(0);
         laser.gameObject.SetActive(true);
         laser2.gameObject.SetActive(true);
+        boom.Play();
         //StartCoroutine(wait());
         Debug.Log("waiting for 2...");
         yield return new WaitForSeconds(3f);

@@ -20,12 +20,15 @@ public class CharacterController : MonoBehaviour {
     public float jumpForce;
     //public float jumpTimeValue;
 
+    public Animator characterAnimator;
+
 
     private void Start() {
         rb = GetComponent<Rigidbody2D>();
         isJumping = false;
         speed = walkSpeed;
         transform.SetParent(null);
+        characterAnimator = GetComponent<Animator>();
         
     }
 
@@ -43,8 +46,12 @@ public class CharacterController : MonoBehaviour {
 
         if(moveInput > 0){
             transform.eulerAngles = new Vector3(0,0,0);
+            characterAnimator.SetBool("isMoving", true);
         } else if(moveInput < 0){
             transform.eulerAngles = new Vector3(0,180,0);
+            characterAnimator.SetBool("isMoving", true);
+        } else {
+            characterAnimator.SetBool("isMoving", false);
         }
 
         // jump
