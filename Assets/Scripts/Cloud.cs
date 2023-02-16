@@ -15,10 +15,16 @@ public class Cloud : Enemy {
 
     public AudioSource boom;
 
+    private Animator animator;
+
+    private float cloudTimerReset;
+
     private void Start() {
         for(int i = 0; i<3; i++){
             beams.Add(this.gameObject.transform.GetChild(i));
         }
+        animator = GetComponent<Animator>();
+        cloudTimerReset = cloudTimer;
     }
 
     private void Update() {
@@ -28,8 +34,11 @@ public class Cloud : Enemy {
         else{
             if(health > 100)
                 StartCoroutine(activateBeam());
-            else
+            else {
+                cloudTimerReset = cloudTimerReset/2;
+                animator.SetBool("phaseTwo", true);
                 StartCoroutine(activateBeams());
+            }
         }
     }
 
@@ -59,7 +68,7 @@ public class Cloud : Enemy {
         yield return new WaitForSeconds(3f);
         Debug.Log("done?");
 
-        cloudTimer = 3f;
+        cloudTimer = cloudTimerReset;
         beam.gameObject.SetActive(false);
         laser.gameObject.SetActive(false);
     }
@@ -89,7 +98,7 @@ public class Cloud : Enemy {
         yield return new WaitForSeconds(3f);
         Debug.Log("done?");
 
-        cloudTimer = 3f;
+        cloudTimer = cloudTimerReset;
         beam.gameObject.SetActive(false);
         beam2.gameObject.SetActive(false);
         laser.gameObject.SetActive(false);

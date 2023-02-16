@@ -80,4 +80,10 @@ public class CharacterController : MonoBehaviour {
         moveInput = Input.GetAxisRaw("Horizontal");
         rb.velocity = new Vector2(moveInput * speed, rb.velocity.y);
     }
+
+    public void setSpeed(float newSpeed){
+        walkSpeed = newSpeed;
+        runSpeed = newSpeed;
+        jumpForce = newSpeed;
+    }
 }

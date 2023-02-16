@@ -14,6 +14,15 @@ public class PatrolEnemy : MonoBehaviour
 
     private void Update()
     {
+
+        if(transform.position.x > patrolPoints[currentPointIndex].position.x){
+            transform.eulerAngles = new Vector3(0,0,0);
+        } else{
+            transform.eulerAngles = new Vector3(0,180,0);
+        }
+
+
+
         if (transform.position != patrolPoints[currentPointIndex].position)
         {       
             transform.position = Vector2.MoveTowards(transform.position,patrolPoints[currentPointIndex].position, speed * Time.deltaTime);

@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     public GameObject player;
     private Vector3 playerStartingPosition;
     public TMP_Text deathText;
+    public TMP_Text endText;
 
     public Player playerInfo;
 
@@ -53,6 +54,20 @@ public class GameManager : MonoBehaviour
         player.transform.position = playerStartingPosition;
         player.SetActive(true);
         Debug.Log("player is respawned?");
+
+    }
+
+
+    public void updateRespawnPoint(Transform newRespawn)
+    {
+        playerStartingPosition = newRespawn.position;
+    }
+
+    public void endLevel(){
+        endText.enabled = true;
+        player.GetComponent<CharacterController>().setSpeed(0);
+
+        // load next scene.... after waiting
 
     }
 
