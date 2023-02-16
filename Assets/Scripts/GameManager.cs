@@ -13,6 +13,8 @@ public class GameManager : MonoBehaviour
     public TMP_Text deathText;
     public TMP_Text endText;
 
+    public TMP_Text defaultDeathText;
+
     public Player playerInfo;
 
     public int levelNumber;
@@ -31,6 +33,8 @@ public class GameManager : MonoBehaviour
         } */
         levelMusic = GetComponent<AudioSource>();
 
+        defaultDeathText.text = deathText.text;
+
         levelMusic.Play();
     }
 
@@ -40,7 +44,13 @@ public class GameManager : MonoBehaviour
 
     }
 
-    public void playerDied(){
+    public void playerDied(string text){
+        if(text != null){
+            deathText.text = text;
+        }
+        else{
+            deathText.text = defaultDeathText.text;
+        }
         StartCoroutine(respawnPlayer());
     }
 

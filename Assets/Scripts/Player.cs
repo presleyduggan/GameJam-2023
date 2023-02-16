@@ -11,12 +11,33 @@ public class Player : Enemy
         gm = FindObjectOfType<GameManager>();
     }
 
-    public override void Die()
+    public void TakeDamage(int damage, string damageText)
+    {
+
+      //  Debug.Log("taking damage of "+damage);
+
+        health -= damage;
+
+        
+
+        if (health <= 0)
+        {
+         //   Debug.Log("killing player");
+            Die(damageText);
+            
+        } else{
+
+        // change color
+        StartCoroutine(changeColor());
+        }
+    }
+
+    public void Die(string damageText)
     {
         // game manager stuff
        // Debug.Log("death function?");
         health = 0;
-        gm.playerDied();
+        gm.playerDied(damageText);
     }
 
     

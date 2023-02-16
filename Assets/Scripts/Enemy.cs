@@ -39,7 +39,7 @@ public class Enemy : MonoBehaviour
         //Destroy(gameObject);
     }
 
-    private IEnumerator changeColor(){
+    public IEnumerator changeColor(){
 
         var renderer = gameObject.GetComponent<Renderer>();
         renderer.material.SetColor("_Color", Color.red);

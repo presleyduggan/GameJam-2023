@@ -15,6 +15,8 @@ GameObject:
   - component: {fileID: 2947034895472126664}
   - component: {fileID: 2947034895472126669}
   - component: {fileID: 1844271000699874024}
+  - component: {fileID: 7946085757277524544}
+  - component: {fileID: 9009322059851822743}
   m_Layer: 3
   m_Name: mailboy
   m_TagString: Player
@@ -31,7 +33,7 @@ Transform:
   m_GameObject: {fileID: 2947034895472126645}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -5.8478317, y: -6.4610004, z: 0}
-  m_LocalScale: {x: 4, y: 4, z: 4}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2947034895576835012}
@@ -117,7 +119,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2947034895472126645}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -149,15 +151,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0
-  walkSpeed: 5
-  runSpeed: 10
+  walkSpeed: 1
+  runSpeed: 2.5
   feetPos: {fileID: 2947034895576835012}
-  checkRadius: 0.3
+  checkRadius: 0.06
   whatIsGround:
     serializedVersion: 2
     m_Bits: 55
   jumpTime: 0.2
-  jumpForce: 10
+  jumpForce: 4
   characterAnimator: {fileID: 0}
 --- !u!50 &2947034895472126669
 Rigidbody2D:
@@ -178,9 +180,40 @@ Rigidbody2D:
   m_Material: {fileID: 6200000, guid: 5661b5fd4966c834683401184e0f4bc1, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!114 &1844271000699874024
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2947034895472126645}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52532976ce7fdc04199d6faa4b2ae708, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
+  deathEffect: {fileID: 0}
+  gm: {fileID: 0}
+--- !u!70 &7946085757277524544
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2947034895472126645}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -0.07}
+  m_Size: {x: 0.11, y: 0.17}
+  m_Direction: 0
+--- !u!114 &9009322059851822743
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
