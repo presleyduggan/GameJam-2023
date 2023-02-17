@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &6508093906016288600
+--- !u!1 &5089425871978111731
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,41 +8,42 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 6508093906016288597}
-  - component: {fileID: 6508093906016288598}
-  - component: {fileID: 6508093906016288599}
-  - component: {fileID: 6508093906016288595}
-  - component: {fileID: 6508093906016288596}
+  - component: {fileID: 5089425871978111735}
+  - component: {fileID: 5089425871978111734}
+  - component: {fileID: 5089425871978111729}
+  - component: {fileID: 5089425871978111728}
+  - component: {fileID: 5089425871978111732}
+  - component: {fileID: 8211381182463765620}
   m_Layer: 0
-  m_Name: Spray Flower
+  m_Name: Magic Trap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &6508093906016288597
+--- !u!4 &5089425871978111735
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6508093906016288600}
+  m_GameObject: {fileID: 5089425871978111731}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.1582165, y: -0.148, z: 0}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
+  m_LocalPosition: {x: 39.684086, y: 1.9217298, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 6508093906659811021}
+  - {fileID: 5089425873551739919}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &6508093906016288598
+--- !u!212 &5089425871978111734
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6508093906016288600}
+  m_GameObject: {fileID: 5089425871978111731}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -77,28 +78,28 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -43312973, guid: 8869bdb95c4900e48ae181e46a3c0475, type: 3}
+  m_Sprite: {fileID: 90146146, guid: 2c3198e0eef40184d9d3c046e87f6efe, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.32, y: 0.32}
+  m_Size: {x: 0.64, y: 0.64}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!95 &6508093906016288599
+--- !u!95 &5089425871978111729
 Animator:
   serializedVersion: 4
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6508093906016288600}
+  m_GameObject: {fileID: 5089425871978111731}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 1a5e195d0cafb4a40931f1d143ff9cd5, type: 2}
+  m_Controller: {fileID: 9100000, guid: 94c040ecf9b0d834fb7e984e9de33a6d, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -108,53 +109,13 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!60 &6508093906016288595
-PolygonCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6508093906016288600}
-  m_Enabled: 0
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.32, y: 0.32}
-    newSize: {x: 0.32, y: 0.32}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: 0.096734755, y: 0.07086766}
-      - {x: 0.10615725, y: 0.1153086}
-      - {x: 0.06841877, y: 0.10919259}
-      - {x: 0.019489862, y: 0.10015344}
-      - {x: -0.048639245, y: 0.089915395}
-      - {x: -0.051655177, y: 0.1239215}
-      - {x: -0.09955769, y: 0.100578815}
-      - {x: -0.076502524, y: -0.011550596}
-      - {x: -0.052675128, y: -0.04355962}
-      - {x: -0.014489385, y: -0.047958933}
-      - {x: 0.029218234, y: -0.050526902}
-      - {x: 0.043758262, y: -0.044251353}
-      - {x: 0.08397949, y: -0.0014791638}
-      - {x: 0.11164942, y: -0.0028568208}
-      - {x: 0.11025498, y: 0.02714318}
---- !u!114 &6508093906016288596
+--- !u!114 &5089425871978111728
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6508093906016288600}
+  m_GameObject: {fileID: 5089425871978111731}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4c9a100d516c4a94f9effcd985031a52, type: 3}
@@ -162,8 +123,50 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 100
   damageText:
-  - That flower didn't smell so good.....
---- !u!1 &6508093906659811022
+  - Poof! You're gone
+--- !u!58 &5089425871978111732
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5089425871978111731}
+  m_Enabled: 0
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0.32}
+  serializedVersion: 2
+  m_Radius: 0.32
+--- !u!61 &8211381182463765620
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5089425871978111731}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0.15940511}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0}
+    oldSize: {x: 0.64, y: 0.64}
+    newSize: {x: 0.64, y: 0.64}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.64, y: 0.31881022}
+  m_EdgeRadius: 0
+--- !u!1 &5089425873551739918
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -171,57 +174,45 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 6508093906659811021}
-  - component: {fileID: 6508093906659811019}
-  - component: {fileID: 6508093906659811020}
+  - component: {fileID: 5089425873551739919}
+  - component: {fileID: 5089425873551739917}
+  - component: {fileID: 5089425873551739916}
   m_Layer: 6
-  m_Name: Flower Zone
+  m_Name: Magic Trap Zone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &6508093906659811021
+--- !u!4 &5089425873551739919
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6508093906659811022}
+  m_GameObject: {fileID: 5089425873551739918}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 6508093906016288597}
+  m_Father: {fileID: 5089425871978111735}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6508093906659811019
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6508093906659811022}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6c434d8afae79b7458e1a505b0b6ad4f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!61 &6508093906659811020
+--- !u!61 &5089425873551739917
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6508093906659811022}
+  m_GameObject: {fileID: 5089425873551739918}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.0064367875, y: 0.06436913}
+  m_Offset: {x: -0.0052700043, y: 0.81934166}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -232,5 +223,17 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.018563, y: 0.4432073}
+  m_Size: {x: 1.1686134, y: 1.1949558}
   m_EdgeRadius: 0
+--- !u!114 &5089425873551739916
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5089425873551739918}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c434d8afae79b7458e1a505b0b6ad4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
