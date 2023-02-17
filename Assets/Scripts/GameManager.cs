@@ -21,6 +21,9 @@ public class GameManager : MonoBehaviour
 
     public AudioSource levelMusic;
 
+    private Animator playerAnimator;
+    private CharacterController playerController;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -36,6 +39,9 @@ public class GameManager : MonoBehaviour
         defaultDeathText.text = deathText.text;
 
         levelMusic.Play();
+
+        playerAnimator = player.GetComponent<Animator>();
+        playerController = player.GetComponent<CharacterController>();
     }
 
     // Update is called once per frame
@@ -57,19 +63,21 @@ public class GameManager : MonoBehaviour
 
     public IEnumerator respawnPlayer(){
         //player.SetActive(false);
-        Debug.Log("respawning player...");
-        player.GetComponent<CharacterController>().freeze();
+        //Debug.Log("respawning player...");
+        playerController.freeze();
         deathText.enabled = true;
+        Debug.Log("freezing :'(");
         yield return new WaitForSeconds(3f);
+        Debug.Log("freezing done :'(");
         deathText.enabled = false;
         player.transform.position = playerStartingPosition;
         var renderer = player.GetComponent<Renderer>();
         renderer.material.SetColor("_Color", Color.white);
-        player.GetComponent<Player>().resetHP();
-        player.GetComponent<Animator>().SetBool("dead", false);
-        player.GetComponent<CharacterController>().unfreeze();
+        playerInfo.resetHP();
+        playerAnimator.SetBool("dead", false);
+        playerController.unfreeze();
         //player.SetActive(true);
-        Debug.Log("player is respawned?");
+        //Debug.Log("player is respawned?");
 
     }
 
@@ -82,8 +90,8 @@ public class GameManager : MonoBehaviour
     public void endLevel(){
         playerInfo.makeImmune(true);
         endText.enabled = true;
-        player.GetComponent<CharacterController>().freeze();
-        player.GetComponent<Animator>().SetBool("isMoving", false);
+        playerController.freeze();
+        playerAnimator.SetBool("isMoving", false);
 
         // load next scene.... after waiting
 
