@@ -38,6 +38,16 @@ public class Plant : Enemy
             Playerinright = true;
         }
     }
-
+    public void Playernotinzone (string direction)
+    {
+        if(String.Equals(direction, "left"))
+        {
+            Playerinleft = false;                  
+        }
+        else
+        {
+            Playerinright = false;
+        }
+    }
    
 }

@@ -22,6 +22,11 @@ public class PlantZone : MonoBehaviour {
             plant.Playerinzone(direction);
         }
     }
-
+    private void OnTriggerExit2D(Collider2D other) {
+        if(other.gameObject.tag == "Player")
+        {
+            plant.Playernotinzone(direction);
+        }
+    }
 }
 
