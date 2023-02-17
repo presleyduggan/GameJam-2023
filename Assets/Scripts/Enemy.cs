@@ -6,9 +6,14 @@ public class Enemy : MonoBehaviour
 {
     public int health = 100;
 
-    private int startingHP;
+    public int startingHP;
 
     public GameObject deathEffect;
+
+
+    private void Start() {
+        startingHP = health;
+    }
 
 
     public virtual void TakeDamage (int damage)

@@ -23,6 +23,14 @@ public class PlatformMove : MonoBehaviour
 
     public bool waitForPlayer = false;
 
+    public bool respawnIfPlayerDies = false;
+
+    private GameObject player;
+   // [SerializeField]
+    private Vector3 original;
+    //[SerializeField]
+    private Vector3 destination;
+
     //private bool swap = false;
 
     public Rigidbody2D rb;
@@ -48,6 +56,13 @@ public class PlatformMove : MonoBehaviour
             yneg = false;
         }
 
+        if(respawnIfPlayerDies){
+            GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
+            player = players[0];
+            original = new Vector3(xStart, yStart, 0f);
+            destination = new Vector3(xEnd, yEnd, 0);
+        }
+
      //   Debug.Log("xvel = "+xvel+" and yvel="+yvel);
 
     }
@@ -70,6 +85,19 @@ public class PlatformMove : MonoBehaviour
             yStart = yEnd;
             yEnd = temp;
             yneg = !yneg;
+        }
+
+        if(respawnIfPlayerDies){
+            if(player.GetComponent<Player>().health <= 0){
+                // respawn
+                waitForPlayer = true;
+                transform.position = original;
+                xStart = transform.position.x;
+                xEnd = destination.x;
+                yStart = transform.position.y;
+                yEnd = destination.y;
+                //respawnIfPlayerDies = false;
+            }
         }
     }
 

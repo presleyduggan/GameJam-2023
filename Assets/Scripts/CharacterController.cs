@@ -20,6 +20,9 @@ public class CharacterController : MonoBehaviour {
     public float jumpForce;
     //public float jumpTimeValue;
 
+    private bool allowedToMove = true;
+    private float[] startingSpeeds = new float[2];
+
     public Animator characterAnimator;
 
 
@@ -29,6 +32,8 @@ public class CharacterController : MonoBehaviour {
         speed = walkSpeed;
         transform.SetParent(null);
         characterAnimator = GetComponent<Animator>();
+        startingSpeeds[0] = walkSpeed;
+        startingSpeeds[1] = runSpeed;
         
     }
 
@@ -43,36 +48,38 @@ public class CharacterController : MonoBehaviour {
         }
 
         // flip character
+        if(allowedToMove){
 
-        if(moveInput > 0){
-            transform.eulerAngles = new Vector3(0,0,0);
-            characterAnimator.SetBool("isMoving", true);
-        } else if(moveInput < 0){
-            transform.eulerAngles = new Vector3(0,180,0);
-            characterAnimator.SetBool("isMoving", true);
-        } else {
-            characterAnimator.SetBool("isMoving", false);
-        }
+            if(moveInput > 0){
+                transform.eulerAngles = new Vector3(0,0,0);
+                characterAnimator.SetBool("isMoving", true);
+            } else if(moveInput < 0){
+                transform.eulerAngles = new Vector3(0,180,0);
+                characterAnimator.SetBool("isMoving", true);
+            } else {
+                characterAnimator.SetBool("isMoving", false);
+            }
 
-        // jump
-        if(isGrounded && Input.GetKeyDown(KeyCode.Space)){
-            rb.velocity = Vector2.up * jumpForce;
-            isJumping = true;
-            jumpTimeCounter = jumpTime;
-        }
+            // jump
+            if(isGrounded && Input.GetKeyDown(KeyCode.Space)){
+                rb.velocity = Vector2.up * jumpForce;
+                isJumping = true;
+                jumpTimeCounter = jumpTime;
+            }
 
-        // hold jump
-        if(Input.GetKey(KeyCode.Space) && isJumping){
-            if(jumpTimeCounter > 0){
-            rb.velocity = Vector2.up * jumpForce;
-            jumpTimeCounter -= Time.deltaTime;
-            } else{
+            // hold jump
+            if(Input.GetKey(KeyCode.Space) && isJumping){
+                if(jumpTimeCounter > 0){
+                rb.velocity = Vector2.up * jumpForce;
+                jumpTimeCounter -= Time.deltaTime;
+                } else{
+                    isJumping = false;
+                }
+            }
+
+            if(Input.GetKeyUp(KeyCode.Space)){
                 isJumping = false;
             }
-        }
-
-        if(Input.GetKeyUp(KeyCode.Space)){
-            isJumping = false;
         }
     }
 
@@ -85,5 +92,17 @@ public class CharacterController : MonoBehaviour {
         walkSpeed = newSpeed;
         runSpeed = newSpeed;
         jumpForce = newSpeed;
+    }
+
+    public void freeze(){
+        walkSpeed = 0;
+        runSpeed = 0;
+        allowedToMove = false;
+    }
+
+    public void unfreeze(){
+        walkSpeed = startingSpeeds[0];
+        runSpeed = startingSpeeds[1];
+        allowedToMove = true;
     }
 }

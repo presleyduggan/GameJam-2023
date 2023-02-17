@@ -56,15 +56,19 @@ public class GameManager : MonoBehaviour
 
 
     public IEnumerator respawnPlayer(){
-        player.SetActive(false);
+        //player.SetActive(false);
         Debug.Log("respawning player...");
+        player.GetComponent<CharacterController>().freeze();
         deathText.enabled = true;
         yield return new WaitForSeconds(3f);
         deathText.enabled = false;
         player.transform.position = playerStartingPosition;
         var renderer = player.GetComponent<Renderer>();
         renderer.material.SetColor("_Color", Color.white);
-        player.SetActive(true);
+        player.GetComponent<Player>().resetHP();
+        player.GetComponent<Animator>().SetBool("dead", false);
+        player.GetComponent<CharacterController>().unfreeze();
+        //player.SetActive(true);
         Debug.Log("player is respawned?");
 
     }
@@ -76,8 +80,10 @@ public class GameManager : MonoBehaviour
     }
 
     public void endLevel(){
+        playerInfo.makeImmune(true);
         endText.enabled = true;
-        player.GetComponent<CharacterController>().setSpeed(0);
+        player.GetComponent<CharacterController>().freeze();
+        player.GetComponent<Animator>().SetBool("isMoving", false);
 
         // load next scene.... after waiting
 
