@@ -11,14 +11,18 @@ public class Weapon : MonoBehaviour
 
     private bool isFiring = false;
 
-    private float fireDelay = 1f;
+    [SerializeField]
+    private float fireDelay = 0.5f;
+
+    public AnimationClip clip;
+
 
     private void Start() {
         animator = GetComponent<Animator>();
     }
 
     void Update () {
-        if (Input.GetButtonDown("Fire1") && !isFiring)
+        if (Input.GetButton("Fire1") && !isFiring)
         {
             isFiring = true;
             StartCoroutine(Shoot());
@@ -27,12 +31,26 @@ public class Weapon : MonoBehaviour
 
     public IEnumerator Shoot()
     {
-        yield return new WaitForSeconds(fireDelay);
+        // start animation
+        animator.SetBool("isAttacking", true);
+
+        //yield return new WaitForSecondsRealtime(0.1f);
+        //float animationLength = animator.GetCurrentAnimatorStateInfo(0).length;
+        //float animationLength = animator.GetCurrentAnimatorStateInfo(0).length;
+
+        yield return new WaitForSecondsRealtime(clip.length);
+
+        animator.SetBool("isAttacking", false);
+        
+
+        //yield return new WaitForSeconds(fireDelay);
 
 
 
         Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
-        Debug.Log("fire test");
+        yield return new WaitForSecondsRealtime(fireDelay);
+        isFiring = false;
+
     }
     
 }
