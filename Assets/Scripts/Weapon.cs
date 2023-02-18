@@ -11,6 +11,8 @@ public class Weapon : MonoBehaviour
 
     private bool isFiring = false;
 
+    private float fireDelay = 1f;
+
     private void Start() {
         animator = GetComponent<Animator>();
     }
@@ -18,12 +20,14 @@ public class Weapon : MonoBehaviour
     void Update () {
         if (Input.GetButtonDown("Fire1") && !isFiring)
         {
+            isFiring = true;
             StartCoroutine(Shoot());
         }
     }
 
-    public IEnumerator Shoot ()
+    public IEnumerator Shoot()
     {
+        yield return new WaitForSeconds(fireDelay);
 
 
 
