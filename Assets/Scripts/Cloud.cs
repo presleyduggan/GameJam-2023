@@ -17,6 +17,8 @@ public class Cloud : Enemy {
 
     private Animator animator;
 
+    //private CloudManager cloud;
+
     private float cloudTimerReset;
 
     private void Start() {
@@ -25,6 +27,7 @@ public class Cloud : Enemy {
         }
         animator = GetComponent<Animator>();
         cloudTimerReset = cloudTimer;
+       // cloud = FindObjectOfType<CloudManager>();
     }
 
     private void Update() {
@@ -32,7 +35,7 @@ public class Cloud : Enemy {
             cloudTimer -= Time.deltaTime;
         }
         else{
-            if(health > 100)
+            if(health > 375)
                 StartCoroutine(activateBeam());
             else {
                 cloudTimerReset = cloudTimerReset/2;
@@ -46,6 +49,34 @@ public class Cloud : Enemy {
         Debug.Log("updating current trigger to "+trigger);
         currentTrigger = trigger;
 
+    }
+
+    public override void TakeDamage (int damage)
+    {
+
+      //  Debug.Log("taking damage of "+damage);
+
+        health -= damage;
+
+        
+
+        if (health <= 0)
+        {
+         //   Debug.Log("killing player");
+            Die();
+            
+        } else{
+
+        // change color
+       // StartCoroutine(changeColor());
+        }
+    }
+
+    public override void Die()
+    {
+        cloudTimer = 1000000f;
+        var renderer = gameObject.GetComponent<Renderer>();
+        renderer.material.SetColor("_Color", Color.black);
     }
 
     public IEnumerator activateBeam(){
@@ -120,6 +151,22 @@ public class Cloud : Enemy {
         int rand = Random.Range(0,2);
         return nums[rand];
 
+    }
+
+
+    public override IEnumerator changeColor(){
+
+        var renderer = gameObject.GetComponent<Renderer>();
+        renderer.material.SetColor("_Color", Color.red);
+
+        yield return new WaitForSecondsRealtime(.5f);
+
+        if(health > 250)
+        renderer.material.SetColor("_Color", Color.white);
+
+
+
+        //renderer.sortingLayerID = SortingLayer.NameToID("Weapons");
     }
 
 

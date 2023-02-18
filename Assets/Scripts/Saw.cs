@@ -11,6 +11,6 @@ public class Saw : Damage
     // Update is called once per frame
     void Update()
     {
-        transform.Rotate(0, 0, rotateAmount, Space.Self);
+        transform.Rotate(0, 0, rotateAmount*Time.deltaTime, Space.Self);
     }
 }

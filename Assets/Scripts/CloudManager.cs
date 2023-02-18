@@ -5,7 +5,7 @@ using TMPro;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class GameManager : MonoBehaviour
+public class CloudManager : MonoBehaviour
 {
 
     public GameObject player;
@@ -25,6 +25,9 @@ public class GameManager : MonoBehaviour
     private Animator playerAnimator;
     private CharacterController playerController;
 
+    [SerializeField]
+    private Cloud cloudBoss;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -40,16 +43,21 @@ public class GameManager : MonoBehaviour
 
         defaultDeathText.text = deathText.text;
 
-        levelMusic.Play();
-
         playerAnimator = player.GetComponent<Animator>();
         playerController = player.GetComponent<CharacterController>();
+
+        cloudBoss = FindObjectOfType<Cloud>();
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        Debug.Log(cloudBoss.health);
+        if(cloudBoss.health <= 0){
+            // end level
+            Debug.Log("Ending level function");
+            StartCoroutine(endLevel());
+        }
     }
 
     public void playerDied(string text){
@@ -68,28 +76,18 @@ public class GameManager : MonoBehaviour
         //Debug.Log("respawning player...");
         playerController.freeze();
         deathText.enabled = true;
-        Debug.Log("freezing :'(");
+        //Debug.Log("freezing :'(");
         yield return new WaitForSeconds(3f);
-        Debug.Log("freezing done :'(");
-        deathText.enabled = false;
-        player.transform.position = playerStartingPosition;
-        var renderer = player.GetComponent<Renderer>();
-        renderer.material.SetColor("_Color", Color.white);
-        playerInfo.resetHP();
-        playerAnimator.SetBool("dead", false);
-        playerController.unfreeze();
+       // Debug.Log("freezing done :'(");
+        SceneManager.LoadScene(levelNumber);
         //player.SetActive(true);
         //Debug.Log("player is respawned?");
 
     }
 
 
-    public void updateRespawnPoint(Transform newRespawn)
-    {
-        playerStartingPosition = newRespawn.position;
-    }
-
     public IEnumerator endLevel(){
+        Debug.Log("End level function");
         playerInfo.makeImmune(true);
         endText.enabled = true;
         playerController.freeze();
@@ -99,7 +97,7 @@ public class GameManager : MonoBehaviour
 
 
         // load next scene.... after waiting
-        SceneManager.LoadScene(levelNumber); // index is one less than current level... starts at 0
+        SceneManager.LoadScene(0); // index is one less than current level... starts at 0
 
 
     }

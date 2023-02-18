@@ -17,6 +17,8 @@ public class PlantBullet : MonoBehaviour {
 
     public float speed;
 
+    private float timer = 15;
+
     private void Start() {
         GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
         target = players[0];
@@ -32,6 +34,12 @@ public class PlantBullet : MonoBehaviour {
     private void Update() {
         //transform.position = Vector2.MoveTowards(transform.position, spotInTime, speed * Time.deltaTime);
         transform.position += transform.right* speed* Time.deltaTime;
+
+        if(timer <= 0){
+            Destroy(gameObject);
+        }
+        
+        timer = timer - Time.deltaTime;
         
     }
 

@@ -124,6 +124,8 @@ MonoBehaviour:
   damage: 100
   damageText:
   - Poof! You're gone
+  - That didn't feel good...
+  - This was not a magical experience
 --- !u!58 &5089425871978111732
 CircleCollider2D:
   m_ObjectHideFlags: 0

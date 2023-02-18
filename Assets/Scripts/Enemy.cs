@@ -9,6 +9,7 @@ public class Enemy : MonoBehaviour
     public int startingHP;
 
     public GameObject deathEffect;
+    
 
 
     private void Start() {
@@ -41,10 +42,10 @@ public class Enemy : MonoBehaviour
     {
         if(deathEffect != null)
             Instantiate(deathEffect, transform.position, Quaternion.identity);
-        //Destroy(gameObject);
+        Destroy(gameObject);
     }
 
-    public IEnumerator changeColor(){
+    public virtual IEnumerator changeColor(){
 
         var renderer = gameObject.GetComponent<Renderer>();
         renderer.material.SetColor("_Color", Color.red);

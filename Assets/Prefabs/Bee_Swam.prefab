@@ -123,6 +123,8 @@ MonoBehaviour:
   damage: 100
   damageText:
   - Bees aren't friendly...
+  - Bzzz... you're dead
+  - They did not taste like honey
 --- !u!114 &-4197076192335943863
 MonoBehaviour:
   m_ObjectHideFlags: 0

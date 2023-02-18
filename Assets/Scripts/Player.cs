@@ -10,7 +10,11 @@ public class Player : Enemy
     [SerializeField]
     private bool isImmune = false;
 
+    [SerializeField]
+    private CloudManager cm;
+
     private void Start() {
+        if(cm == null)
         gm = FindObjectOfType<GameManager>();
         startingHP = health;
     }
@@ -45,7 +49,11 @@ public class Player : Enemy
         health = 0;
         Animator animator = GetComponent<Animator>();
         animator.SetBool("dead", true);
+        if(cm != null){
+            cm.playerDied(damageText);
+        } else {
         gm.playerDied(damageText);
+        }
     }
 
     public void resetHP(){

@@ -14,7 +14,7 @@ public class Mailbox : MonoBehaviour {
         if(other.gameObject.tag == "Player"){
             // end level
             animator.SetBool("endLevel", true);
-            gm.endLevel();
+            StartCoroutine(gm.endLevel());
         }
     }
 }

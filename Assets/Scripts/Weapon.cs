@@ -16,13 +16,16 @@ public class Weapon : MonoBehaviour
 
     public AnimationClip clip;
 
+    [SerializeField]
+    private bool canFire = true;
+
 
     private void Start() {
         animator = GetComponent<Animator>();
     }
 
     void Update () {
-        if (Input.GetButton("Fire1") && !isFiring)
+        if (Input.GetButton("Fire1") && !isFiring && canFire)
         {
             isFiring = true;
             StartCoroutine(Shoot());

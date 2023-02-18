@@ -120,6 +120,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 10
+  damageText:
+  - You didn't saw that coming...
   rotateAmount: 0.1
 --- !u!58 &2122714665998298694
 CircleCollider2D:
