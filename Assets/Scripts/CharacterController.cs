@@ -23,6 +23,11 @@ public class CharacterController : MonoBehaviour {
     private bool allowedToMove = true;
     private float[] startingSpeeds = new float[2];
 
+    private float flipLeft = 0f;
+    private float flipRight = 180f;
+
+    public bool facesRight = true;
+
     public Animator characterAnimator;
 
 
@@ -34,6 +39,12 @@ public class CharacterController : MonoBehaviour {
         characterAnimator = GetComponent<Animator>();
         startingSpeeds[0] = walkSpeed;
         startingSpeeds[1] = runSpeed;
+
+
+        if(!facesRight){
+            flipLeft = 180f;
+            flipRight = 0f;
+        }
         
     }
 
@@ -51,10 +62,10 @@ public class CharacterController : MonoBehaviour {
         if(allowedToMove){
 
             if(moveInput > 0){
-                transform.eulerAngles = new Vector3(0,0,0);
+                transform.eulerAngles = new Vector3(0,flipLeft,0);
                 characterAnimator.SetBool("isMoving", true);
             } else if(moveInput < 0){
-                transform.eulerAngles = new Vector3(0,180,0);
+                transform.eulerAngles = new Vector3(0,flipRight,0);
                 characterAnimator.SetBool("isMoving", true);
             } else {
                 characterAnimator.SetBool("isMoving", false);

@@ -49,11 +49,13 @@ SpriteAtlas:
     - {fileID: 2800000, guid: 0e021bed65c6e3d4b9240ab017e1bcbd, type: 3}
     - {fileID: 2800000, guid: 2cdb459f6b5656441a3e7975617e04ac, type: 3}
     - {fileID: 2800000, guid: a19a06dbacf1bfa489b0e238a5c719f1, type: 3}
+    - {fileID: 21300000, guid: f7837184418ca7443b59de2181b24813, type: 3}
     bindAsDefault: 1
     isAtlasV2: 0
     cachedData: {fileID: 0}
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
+  - {fileID: 21300000, guid: f7837184418ca7443b59de2181b24813, type: 3}
   - {fileID: -1324130684, guid: 549e92384531d55459b7946af5811559, type: 3}
   - {fileID: -1907260131, guid: 549e92384531d55459b7946af5811559, type: 3}
   - {fileID: -2065794213, guid: 549e92384531d55459b7946af5811559, type: 3}
@@ -228,6 +230,7 @@ SpriteAtlas:
   - {fileID: -489814034, guid: 2cdb459f6b5656441a3e7975617e04ac, type: 3}
   - {fileID: 157737366, guid: 2cdb459f6b5656441a3e7975617e04ac, type: 3}
   m_PackedSpriteNamesToIndex:
+  - brea-flower
   - grid-tile-sheet2-export_59
   - grid-tile-sheet2-export_58
   - grid-tile-sheet2-export_28
