@@ -963,7 +963,7 @@ MonoBehaviour:
   defaultDeathText: {fileID: 1085821715}
   playerInfo: {fileID: 0}
   levelNumber: 2
-  nextLevel: 0
+  nextLevel: 3
   levelMusic: {fileID: 0}
 --- !u!4 &318881644
 Transform:
