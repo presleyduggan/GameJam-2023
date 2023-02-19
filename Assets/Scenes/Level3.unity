@@ -767,7 +767,7 @@ MonoBehaviour:
   endText: {fileID: 858231749}
   defaultDeathText: {fileID: 1697987073}
   playerInfo: {fileID: 0}
-  levelNumber: 2
+  levelNumber: 3
   nextLevel: 0
   levelMusic: {fileID: 0}
 --- !u!4 &88285993

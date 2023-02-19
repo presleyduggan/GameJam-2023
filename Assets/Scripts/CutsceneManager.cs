@@ -35,8 +35,8 @@ public class CutsceneManager : MonoBehaviour
         for(int i = 0; i < cutsceneText.Count; i++){
             displayText.text = cutsceneText[i];
             yield return new WaitForSecondsRealtime(waitTimes[i]);
-            Debug.Log("Finished cutscene text "+ i);
-            if(i == 4){
+           // Debug.Log("Finished cutscene text "+ i);
+            if(i == 4 && isWizardTower){
                 killMailman();
                 yield return new WaitForSecondsRealtime(1f);
                 player.GetComponent<Animator>().SetBool("dead", true);

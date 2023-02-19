@@ -161,7 +161,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7126060528088556001, guid: 3eec995bee6f4f743be03413a5006306, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7126060528088556003, guid: 3eec995bee6f4f743be03413a5006306, type: 3}
       propertyPath: m_Name
@@ -209,6 +209,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7126060528088556004, guid: 3eec995bee6f4f743be03413a5006306, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7126060528088556011, guid: 3eec995bee6f4f743be03413a5006306, type: 3}
+      propertyPath: canFire
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7126060528088556011, guid: 3eec995bee6f4f743be03413a5006306, type: 3}
@@ -3320,7 +3324,7 @@ MonoBehaviour:
   - 5
   - 5
   waitTime: 5
-  nextLevel: 3
+  nextLevel: 4
   isWizardTower: 1
   player: {fileID: 10683791}
   wizard: {fileID: 46494541}

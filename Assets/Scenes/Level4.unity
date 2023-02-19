@@ -840,7 +840,7 @@ MonoBehaviour:
   endText: {fileID: 858231749}
   defaultDeathText: {fileID: 1697987073}
   playerInfo: {fileID: 0}
-  levelNumber: 4
+  levelNumber: 5
   nextLevel: 0
   levelMusic: {fileID: 0}
 --- !u!4 &88285993
@@ -1001,7 +1001,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7126060528088556004, guid: 3eec995bee6f4f743be03413a5006306, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -33.3
+      value: 87.03
       objectReference: {fileID: 0}
     - target: {fileID: 7126060528088556004, guid: 3eec995bee6f4f743be03413a5006306, type: 3}
       propertyPath: m_LocalPosition.y

@@ -6,8 +6,14 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/ThroneRoom.unity
+    guid: 71ec3d1f793cd5343826299d2439d6e2
+  - enabled: 1
     path: Assets/Scenes/Level1.unity
     guid: 7815a80a309a60f4bb391b2a23575f71
+  - enabled: 1
+    path: Assets/Scenes/Level2.unity
+    guid: c4b75401ed9da554398487b011577d06
   - enabled: 1
     path: Assets/Scenes/Level3.unity
     guid: 17c510955ca347e4c9ab5e6dde96ff18
