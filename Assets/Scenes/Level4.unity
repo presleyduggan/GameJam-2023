@@ -841,7 +841,7 @@ MonoBehaviour:
   defaultDeathText: {fileID: 1697987073}
   playerInfo: {fileID: 0}
   levelNumber: 5
-  nextLevel: 0
+  nextLevel: 6
   levelMusic: {fileID: 0}
 --- !u!4 &88285993
 Transform:

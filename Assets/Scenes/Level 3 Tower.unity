@@ -3324,7 +3324,7 @@ MonoBehaviour:
   - 5
   - 5
   waitTime: 5
-  nextLevel: 4
+  nextLevel: 5
   isWizardTower: 1
   player: {fileID: 10683791}
   wizard: {fileID: 46494541}

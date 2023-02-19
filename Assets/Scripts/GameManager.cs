@@ -99,7 +99,7 @@ public class GameManager : MonoBehaviour
 
 
         // load next scene.... after waiting
-        SceneManager.LoadScene(levelNumber); // index is one less than current level... starts at 0
+        SceneManager.LoadScene(nextLevel); // index is one less than current level... starts at 0
 
 
     }
