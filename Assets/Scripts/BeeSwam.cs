@@ -21,7 +21,7 @@ public class BeeSwam : FollowEnemy {
 
 
         if(target.GetComponent<Player>().health <= 0){
-            Debug.Log("killing bee");
+            //Debug.Log("killing bee");
             // kill the bee
             Destroy(gameObject);
             

@@ -64,7 +64,7 @@ public class Plant : Enemy
 
             float angle = Vector2.Angle(transform.right, temp);
 
-            Debug.Log("angle = "+angle);
+            //Debug.Log("angle = "+angle);
 
             Instantiate(PlantBulletPrefab, zoneR.transform.position,  Quaternion.Euler(new Vector3(0, 0, angle)));
             yield return new WaitForSeconds(waitTime);
@@ -86,7 +86,7 @@ public class Plant : Enemy
 
             float angle = Vector2.Angle(transform.right, temp);
 
-            Debug.Log("angle = "+angle);
+            //Debug.Log("angle = "+angle);
 
             Instantiate(PlantBulletPrefab, zoneL.transform.position, Quaternion.Euler(new Vector3(0, 180, angle)));
             yield return new WaitForSeconds(waitTime);

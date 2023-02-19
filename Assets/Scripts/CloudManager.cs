@@ -52,10 +52,10 @@ public class CloudManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(cloudBoss.health);
+        //Debug.Log(cloudBoss.health);
         if(cloudBoss.health <= 0){
             // end level
-            Debug.Log("Ending level function");
+           // Debug.Log("Ending level function");
             StartCoroutine(endLevel());
         }
     }
@@ -88,7 +88,7 @@ public class CloudManager : MonoBehaviour
 
 
     public IEnumerator endLevel(){
-        Debug.Log("End level function");
+        //Debug.Log("End level function");
         playerInfo.makeImmune(true);
         endText.enabled = true;
         playerController.freeze();

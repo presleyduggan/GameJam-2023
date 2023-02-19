@@ -30,7 +30,7 @@ public class Beehive : MonoBehaviour {
     }
 
     private void OnTriggerEnter2D(Collider2D other) {
-        Debug.Log("something entered and beesinnest = "+beesInNest);
+        //Debug.Log("something entered and beesinnest = "+beesInNest);
         if(other.gameObject.tag == "Player" && beesInNest){
             animator.SetBool("playerHere", true);
             beesInNest = false;

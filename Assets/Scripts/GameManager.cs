@@ -79,9 +79,9 @@ public class GameManager : MonoBehaviour
         //Debug.Log("respawning player...");
         playerController.freeze();
         deathText.enabled = true;
-        Debug.Log("freezing :'(");
+        //Debug.Log("freezing :'(");
         yield return new WaitForSeconds(3f);
-        Debug.Log("freezing done :'(");
+        //Debug.Log("freezing done :'(");
         deathText.enabled = false;
         player.transform.position = playerStartingPosition;
         var renderer = player.GetComponent<Renderer>();
