@@ -61,6 +61,7 @@ public class CloudManager : MonoBehaviour
     }
 
     public void playerDied(string text){
+        player.GetComponent<Weapon>().playerCanFire(false);
         if(text != null){
             deathText.text = text;
         }
@@ -97,7 +98,7 @@ public class CloudManager : MonoBehaviour
 
 
         // load next scene.... after waiting
-        SceneManager.LoadScene(0); // index is one less than current level... starts at 0
+        SceneManager.LoadScene(nextLevel); // index is one less than current level... starts at 0
 
 
     }

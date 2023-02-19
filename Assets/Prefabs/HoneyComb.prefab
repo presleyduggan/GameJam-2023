@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8927538181560278265}
   - component: {fileID: 8927538181560278269}
   - component: {fileID: 8927538181560278270}
+  - component: {fileID: 3762550269190217744}
   m_Layer: 0
   m_Name: HoneyComb
   m_TagString: Untagged
@@ -147,3 +148,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   beePrefab: {fileID: 3757204529547987834, guid: 58abe72ec92175c43954f67fa4f2c122, type: 3}
   delay: 0.5
+  beesInNest: 1
+  player: {fileID: 0}
+--- !u!114 &3762550269190217744
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8927538181560278266}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9921dcac3656799489a0b0f9449e3020, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 20
+  startingHP: 0
+  deathEffect: {fileID: 0}

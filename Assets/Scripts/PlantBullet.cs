@@ -50,9 +50,9 @@ public class PlantBullet : MonoBehaviour {
                     returnText = returnRandomText();
                 }
                 other.gameObject.GetComponent<Player>().TakeDamage(damage, returnText);
+            Destroy(gameObject);
         }
 
-        Destroy(gameObject);
     }
 
 

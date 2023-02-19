@@ -37095,7 +37095,10 @@ MonoBehaviour:
   defaultDeathText: {fileID: 1984413444}
   playerInfo: {fileID: 0}
   levelNumber: 0
+  nextLevel: 0
   levelMusic: {fileID: 0}
+  isWizardFireLevel: 0
+  isWizard: 0
 --- !u!4 &1999597832
 Transform:
   m_ObjectHideFlags: 0
@@ -39874,6 +39877,10 @@ PrefabInstance:
     - target: {fileID: 7126060528088556003, guid: 3eec995bee6f4f743be03413a5006306, type: 3}
       propertyPath: m_Name
       value: Wizard
+      objectReference: {fileID: 0}
+    - target: {fileID: 7126060528088556003, guid: 3eec995bee6f4f743be03413a5006306, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7126060528088556004, guid: 3eec995bee6f4f743be03413a5006306, type: 3}
       propertyPath: m_RootOrder

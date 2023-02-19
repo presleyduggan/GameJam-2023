@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 3757204529547987839}
   - component: {fileID: -4197076192335943863}
   - component: {fileID: 8283173393194937224}
+  - component: {fileID: -2822489251168883268}
   m_Layer: 0
   m_Name: Bee_Swam
   m_TagString: Untagged
@@ -174,3 +175,18 @@ PolygonCollider2D:
       - {x: 0.099999994, y: -0.14999999}
       - {x: 0.099999994, y: -0.01}
       - {x: 0.089999996, y: 0.01}
+--- !u!114 &-2822489251168883268
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3757204529547987834}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9921dcac3656799489a0b0f9449e3020, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 10
+  startingHP: 0
+  deathEffect: {fileID: 0}

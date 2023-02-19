@@ -21,6 +21,12 @@ public class Cloud : Enemy {
 
     private float cloudTimerReset;
 
+    private bool isAttacked = false;
+
+    private bool isEnraged = false;
+
+    public AudioSource enrage;
+
     private void Start() {
         for(int i = 0; i<3; i++){
             beams.Add(this.gameObject.transform.GetChild(i));
@@ -68,7 +74,8 @@ public class Cloud : Enemy {
         } else{
 
         // change color
-       // StartCoroutine(changeColor());
+        if(!isAttacked)
+        StartCoroutine(changeColor());
         }
     }
 
@@ -105,6 +112,12 @@ public class Cloud : Enemy {
     }
 
     public IEnumerator activateBeams(){
+
+        if(!isEnraged){
+            isEnraged = true;
+            enrage.Play();
+        }
+
         cloudTimer = 1000f;
         var renderer = gameObject.GetComponent<Renderer>();
         renderer.material.SetColor("_Color", Color.red);
@@ -156,16 +169,27 @@ public class Cloud : Enemy {
 
     public override IEnumerator changeColor(){
 
+        isAttacked = true;
+
+        if(health > 250){
         var renderer = gameObject.GetComponent<Renderer>();
         renderer.material.SetColor("_Color", Color.red);
 
         yield return new WaitForSecondsRealtime(.5f);
 
-        if(health > 250)
+        //if(health > 250)
         renderer.material.SetColor("_Color", Color.white);
+        } else{
+        var renderer = gameObject.GetComponent<Renderer>();
+        renderer.material.SetColor("_Color", Color.gray);
 
+        yield return new WaitForSecondsRealtime(.5f);
 
+        //if(health > 250)
+        renderer.material.SetColor("_Color", Color.red);
+        }
 
+        isAttacked = false;
         //renderer.sortingLayerID = SortingLayer.NameToID("Weapons");
     }
 

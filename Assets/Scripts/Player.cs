@@ -13,6 +13,8 @@ public class Player : Enemy
     [SerializeField]
     private CloudManager cm;
 
+    public AudioSource death;
+
     private void Start() {
         if(cm == null)
         gm = FindObjectOfType<GameManager>();
@@ -46,6 +48,7 @@ public class Player : Enemy
     {
         // game manager stuff
        // Debug.Log("death function?");
+        death.Play();
         health = 0;
         Animator animator = GetComponent<Animator>();
         animator.SetBool("dead", true);

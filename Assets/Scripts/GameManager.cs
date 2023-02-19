@@ -25,6 +25,10 @@ public class GameManager : MonoBehaviour
     private Animator playerAnimator;
     private CharacterController playerController;
 
+    public bool isWizardFireLevel = false;
+
+    public bool isWizard = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -44,6 +48,10 @@ public class GameManager : MonoBehaviour
 
         playerAnimator = player.GetComponent<Animator>();
         playerController = player.GetComponent<CharacterController>();
+
+        if(isWizardFireLevel){
+            StartCoroutine(wizardFireLevel());
+        }
     }
 
     // Update is called once per frame
@@ -64,6 +72,9 @@ public class GameManager : MonoBehaviour
 
 
     public IEnumerator respawnPlayer(){
+        if(isWizard){
+            player.GetComponent<Weapon>().playerCanFire(false);
+        }
         //player.SetActive(false);
         //Debug.Log("respawning player...");
         playerController.freeze();
@@ -78,6 +89,9 @@ public class GameManager : MonoBehaviour
         playerInfo.resetHP();
         playerAnimator.SetBool("dead", false);
         playerController.unfreeze();
+        if(isWizard){
+            player.GetComponent<Weapon>().playerCanFire(true);
+        }
         //player.SetActive(true);
         //Debug.Log("player is respawned?");
 
@@ -102,6 +116,20 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(nextLevel); // index is one less than current level... starts at 0
 
 
+    }
+
+    public IEnumerator wizardFireLevel(){
+        deathText.color = Color.white;
+        deathText.text = "As the wizard you may now hold left mouse to fire";
+        deathText.enabled = true;
+        yield return new WaitForSeconds(3f);
+        deathText.enabled = false;
+        deathText.color = Color.black;
+        deathText.text = defaultDeathText.text;
+    }
+
+    public bool returnIsWizard(){
+        return isWizard;
     }
 
     /* public void RespawnPlayer(){

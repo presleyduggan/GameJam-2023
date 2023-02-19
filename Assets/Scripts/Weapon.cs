@@ -55,5 +55,10 @@ public class Weapon : MonoBehaviour
         isFiring = false;
 
     }
+
+
+    public void playerCanFire(bool value){
+        canFire = value;
+    }
     
 }
